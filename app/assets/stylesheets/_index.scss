@@ -1,0 +1,36 @@
+.slick_bar {
+  height: 390px;
+  width: 100%;
+  background-color: gray;
+  box-sizing: border-box;
+  &__left {
+    height: 46px;
+    width: 91px;
+    float: left;
+    line-height: 390px;
+    &__button {
+      text-align: right;
+      font-size: 46px;
+      color: white;
+    }
+  }
+  &__right {
+    margin: 0 0 0 auto;
+    height: 46px;
+    width: 91px;
+    line-height: 390px;
+    &__button {
+      font-size: 46px;
+      color: white;
+    }
+  }
+}
+.content {
+  &__category {
+    &__title {
+      height: 39px;
+      width: 100%;
+      text-align: center;
+    }
+  }
+}
