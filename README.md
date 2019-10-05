@@ -25,10 +25,6 @@ Things you may want to cover:
 |birth_year|int|null false|
 |birth_month|int|null false|
 |birth_day|int|null false|
-|prefecture|string|null false|
-|city|string|null false|
-|block|string|null false|
-|building|string||
 |tel|int|null false, unique|
 |credit|string|unique|
 
@@ -39,6 +35,19 @@ Things you may want to cover:
 - has_many :reviews
 - has_many :comments
 - has_many :messages
+- has_many :addresses
+
+## addressesテーブル
+|column|Type|Option|
+|-------|----|-----|
+|prefecture|string|null false|
+|city|string|null false|
+|block|string|null false|
+|building|string||
+|user_id|int|null false, unique, foreign_key: true|
+
+### Association
+- belongs_to :user
 
 ## itemsテーブル
 |columm|Type|Option|
@@ -52,6 +61,8 @@ Things you may want to cover:
 |delivery_date|string|null false|
 |buyer_id|int|null false, unique, foreign_key: true|
 |seller_id|int|null false, unique, foreign_key: true|
+|area_id|int|null false, unique, foreign_key: true|
+|brand_id|int|null false, unique, foreign_key: true|
 
 ### Association
 - belongs_to :user
@@ -66,6 +77,8 @@ Things you may want to cover:
 ## categories_itemsテーブル
 |columm|Type|Option|
 |-------|----|-----|
+|category_id|int|null false, unique, foreign_key: true|
+|item_id|int|null false, unique, foreign_key: true|
 
 ### Association
 - belongs_to :category
@@ -75,6 +88,7 @@ Things you may want to cover:
 |columm|Type|Option|
 |-------|----|-----|
 |image|string|null false|
+|item_id|int|null false, unique, foreign_key: true|
 
 ### Association
 - belongs_to :item
@@ -84,6 +98,7 @@ Things you may want to cover:
 |-------|----|-----|
 |review|int|null false|
 |text|text||
+|user_id|int|null false, unique, foreign_key: true|
 
 ### Association
 - belongs_to :user
@@ -93,7 +108,6 @@ Things you may want to cover:
 |-------|----|-----|
 |category|string|null false, unique|
 |parent_id|int||
-
 
 ### Association
 - has_many :items,  through: :categories_items
@@ -123,6 +137,7 @@ Things you may want to cover:
 |columm|Type|Option|
 |-------|----|-----|
 |comment|text|null false|
+|item_id|int|null false, unique, foreign_key: true|
 
 ### Association
 - belongs_to :item
@@ -130,6 +145,8 @@ Things you may want to cover:
 ## favoritesテーブル
 |columm|Type|Option|
 |-------|----|-----|
+|item_id|int|null false, unique, foreign_key: true|
+|user_id|int|null false, unique, foreign_key: true|
 
 ### Association
 - belongs_to :item
@@ -139,6 +156,8 @@ Things you may want to cover:
 |columm|Type|Option|
 |-------|----|-----|
 |message|text|null false|
+|item_id|int|null false, unique, foreign_key: true|
+|user_id|int|null false, unique, foreign_key: true|
 
 ### Association
 - belongs_to :item
@@ -160,6 +179,7 @@ Things you may want to cover:
 
 ### Association
 - belongs_to :user
+
 
 * Database initialization
 
