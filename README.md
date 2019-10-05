@@ -29,13 +29,13 @@ Things you may want to cover:
 |credit|string|unique|
 
 ### Association
-- has_many :items
+- has_many :items, dependent: :destroy
 - has_many :favorites
 - has_many :orders
 - has_many :reviews
 - has_many :comments
 - has_many :messages
-- has_many :addresses
+- has_many :addresses, dependent: :destroy
 
 ## addressesテーブル
 |column|Type|Option|
@@ -70,9 +70,9 @@ Things you may want to cover:
 - belongs_to :brand
 - has_many :images
 - has_many :categories, through: :categories_items
-- has_many :favorites
-- has_many :comments
-- has_many :messages
+- has_many :favorites, dependent: :destroy
+- has_many :comments, dependent: :destroy
+- has_many :messages, dependent: :destroy
 
 ## categories_itemsテーブル
 |columm|Type|Option|
