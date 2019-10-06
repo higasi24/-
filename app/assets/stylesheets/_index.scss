@@ -95,6 +95,24 @@
         background-color: rgb(245, 245, 245);
         height: 573px;
         width: 100%;
+        padding-top: 42px;
+        padding-left: 54px;
+        padding-right: 54px;
+        box-sizing: border-box;
+        &__upper {
+          height: 33px;
+          width: 100%;
+          &__text {
+            font-size: 24px;
+            float: left;
+            line-height: 33px;
+          }
+          &__more {
+            color: rgb(0,149,238);
+            text-align: right;
+            line-height: 33px;
+          }
+        }
       }
     }
   }
