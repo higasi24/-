@@ -29,5 +29,3 @@ ActiveRecord::Schema.define(version: 2019_10_06_055501) do
     t.index ["area_id"], name: "index_items_on_area_id"
     t.index ["brand_id"], name: "index_items_on_brand_id"
   end
-
-end
