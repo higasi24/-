@@ -10,6 +10,22 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 0) do
+ActiveRecord::Schema.define(version: 2019_10_06_055501) do
 
-end
+  create_table "items", force: :cascade do |t|
+    t.string "name", null: false
+    t.text "detail"
+    t.string "state", null: false
+    t.string "delivery_fee", null: false
+    t.integer "price", null: false
+    t.string "delivery_method", null: false
+    t.string "delivery_date", null: false
+    t.integer "buyer_id"
+    t.integer "saler_id"
+    t.integer "area_id", null: false
+    t.integer "brand_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["area_id"], name: "index_items_on_area_id"
+    t.index ["brand_id"], name: "index_items_on_brand_id"
+  end
