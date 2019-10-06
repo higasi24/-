@@ -1,0 +1,31 @@
+.header
+  .header__box
+    .header__box__upper
+      .header__box__upper__logo
+        = link_to "HOME", root_path, class:"logo"
+      .header__box__upper__search-box
+        %input{type:"search", placeholder: "何かお探しですか？"}
+          %label{ fa_icon:"picture-o"}
+    .header__box__lower
+      .header__box__lower__list-left
+        .list-right
+          = link_to root_path do
+            = fa_icon 'list-ul', class:"icon__orange"
+            カテゴリーから探す
+        .list-left
+          = link_to root_path do
+            = fa_icon 'tag', class:"icon__orange"
+            ブランドから探す
+      %ul.header__box__lower__list-right
+        %li
+          = link_to root_path do
+            = fa_icon 'bell', class:"icon__gray"
+            お知らせ
+        %li
+          = link_to root_path do
+            = fa_icon 'check', class:"icon__gray"
+            やることリスト
+        %li
+          = link_to root_path do
+            = fa_icon 'check', class:"icon__gray"
+            マイページ
