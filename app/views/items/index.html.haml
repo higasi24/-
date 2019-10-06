@@ -1,1 +1,32 @@
-= render 'layouts/header'
+
+= render partial: "layouts/header"
+.body
+  .slick_bar
+    .slick_bar__left
+      .slick_bar__left__button
+        <
+    .slick_bar__right
+      .slick_bar__right__button
+        > 
+  .content
+    .content__category
+      .content__category__title
+        人気のカテゴリー
+      .content__category__contents
+        .content__category__contents__top1
+          .content__category__contents__top1__text
+            レディース
+        .content__category__contents__top2
+          .content__category__contents__top2__text
+            メンズ
+        .content__category__contents__top3
+          .content__category__contents__top3__text
+            家電・スマホ・カメラ
+        .content__category__contents__top4
+          .content__category__contents__top4__text
+            おもちゃ・ホビー・グッズ
+      .content__category__lists
+    .content__brand
+      .content__brand__title
+      .content__brand__contents
+      .content__brand__lists
